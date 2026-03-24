@@ -8,7 +8,7 @@
     <PackageId>Autorizacion.Flujo.KevObando26</PackageId>
     <Authors>KevObando26</Authors>
     <Description>Lógica de negocio del paquete de autorización. Agrega perfiles del usuario como claims al ClaimsPrincipal</Description>
-    <RepositoryUrl>https://github.com/Drojascode/SC701</RepositoryUrl>
+    <RepositoryUrl>https://github.com/SC701</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 

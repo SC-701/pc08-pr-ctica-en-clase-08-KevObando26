@@ -8,7 +8,7 @@
     <PackageId>Autorizacion.DA.KevObando26</PackageId>
     <Authors>KevObando26</Authors>
     <Description>Capa de acceso a datos del paquete de autorización. Consulta perfiles de usuario en la BD de seguridad con Dapper</Description>
-    <RepositoryUrl>https://github.com/Drojascode/SC701</RepositoryUrl>
+    <RepositoryUrl>https://github.com/SC701</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
