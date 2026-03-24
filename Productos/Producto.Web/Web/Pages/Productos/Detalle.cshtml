@@ -1,0 +1,76 @@
+﻿@page
+@model Web.Pages.Productos.DetalleModel
+@{
+    ViewData["Title"] = "Detalle del producto";
+}
+
+<header class="subhead">
+    <div class="container">
+        <div class="masthead-subheading">SC-701: Programación Web Avanzada</div>
+        <div class="masthead-heading text-uppercase">Ejercicio productos</div>
+    </div>
+</header>
+
+<section class="page-section" id="services">
+    <div class="container" style="max-width: fit-content;">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Detalle del producto</h2>
+            <h3 class="section-subheading text-muted">Información detallada del producto seleccionado.</h3>
+        </div>
+
+        <div class="card mb-3 w-100 shadow-sm">
+            <div class="row g-0">
+                <div class="col-md-4" style="min-width: fit-content;">
+                    <img src="~/assets/img/producto.png" class="img-fluid vw-3 p-4 rounded-start" alt="Producto">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                @Html.DisplayFor(modelo => modelo.productos.Nombre)
+                            </h5>
+
+                            <p class="card-text">
+                                <div>
+                                    <b>@Html.DisplayNameFor(modelo => modelo.productos.Categoria): </b>
+                                    @Html.DisplayFor(modelo => modelo.productos.Categoria)
+                                </div>
+
+                                <div>
+                                    <b>@Html.DisplayNameFor(modelo => modelo.productos.SubCategoria): </b>
+                                    @Html.DisplayFor(modelo => modelo.productos.SubCategoria)
+                                </div>
+
+                                <div>
+                                    <b>@Html.DisplayNameFor(modelo => modelo.productos.CodigoBarras): </b>
+                                    @Html.DisplayFor(modelo => modelo.productos.CodigoBarras)
+                                </div>
+
+                                <div>
+                                    <b>@Html.DisplayNameFor(modelo => modelo.productos.Descripcion): </b>
+                                    @Html.DisplayFor(modelo => modelo.productos.Descripcion)
+                                </div>
+
+                                <div>
+                                    <b>@Html.DisplayNameFor(modelo => modelo.productos.Precio): </b>
+                                    @Html.DisplayFor(modelo => modelo.productos.Precio)
+                                </div>
+
+                                <div>
+                                    <b>Precio USD: </b>
+                                    @Html.DisplayFor(modelo => modelo.productos.PrecioUSD)
+                                </div>
+
+                                <div>
+                                    <b>@Html.DisplayNameFor(modelo => modelo.productos.Stock): </b>
+                                    @Html.DisplayFor(modelo => modelo.productos.Stock)
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="btn btn-primary" asp-page="./Index">Regresar</a>
+            <a class="btn btn-warning" asp-page="./Editar" asp-route-id="@Model.productos.Id">Editar</a>
+        </div>
+    </section>

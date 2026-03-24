@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gestión de Productos</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+<body class="app-shell">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark app-navbar sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" asp-page="/Index">
+                    <span class="brand-icon">
+                        <i class="bi bi-box-seam-fill"></i>
+                    </span>
+                    <div class="d-flex flex-column lh-sm">
+                        <span class="brand-title">Progra Productos</span>
+                        <small class="brand-subtitle">Gestión académica CRUD</small>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+                        aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMain">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 mt-3 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link nav-pill" asp-page="/Index">
+                                <i class="bi bi-house-door me-1"></i> Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-pill" asp-page="/Productos/Index">
+                                <i class="bi bi-grid me-1"></i> Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-pill" asp-page="/Privacy">
+                                <i class="bi bi-shield-lock me-1"></i> Privacidad
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary btn-sm nav-cta ms-lg-2" asp-page="/Productos/Agregar">
+                                <i class="bi bi-plus-circle me-1"></i> Nuevo producto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero-strip">
+            <div class="container">
+                <div class="hero-strip-content">
+                    <span class="hero-badge">
+                        <i class="bi bi-stars"></i> Sistema Web
+                    </span>
+                    <h1 class="hero-title">Gestión de Productos</h1>
+                    <p class="hero-text mb-0">
+                        Administra categorías, subcategorías y productos desde una interfaz clara y moderna.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main class="flex-grow-1">
+        <div class="container app-main py-4 py-lg-5">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="app-footer mt-auto">
+        <div class="container">
+            <div class="footer-inner">
+                <div>
+                    <div class="footer-title">Gestión de Productos</div>
+                    <div class="footer-text">© @DateTime.Now.Year • SC-701 • Programación Web Avanzada</div>
+                </div>
+
+                <div class="footer-links">
+                    <a asp-page="/Privacy">Privacidad</a>
+                    <a href="https://learn.microsoft.com/aspnet/core" target="_blank" rel="noopener">Documentación</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

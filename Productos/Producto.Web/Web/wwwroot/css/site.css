@@ -1,0 +1,329 @@
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #f4f6fb 0%, #eef2f7 100%);
+    color: #212529;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Focus accesible */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus,
+textarea:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem rgba(37, 140, 251, 0.35);
+    border-color: #86b7fe;
+}
+
+/* Navbar */
+.app-navbar {
+    background: linear-gradient(90deg, #0f172a 0%, #111827 55%, #1f2937 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+}
+
+.navbar-brand {
+    letter-spacing: 0.2px;
+    text-decoration: none;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    font-size: 1.15rem;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.28);
+}
+
+.brand-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.brand-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.76rem;
+    font-weight: 400;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.82);
+    transition: all 0.2s ease-in-out;
+}
+
+    .navbar .nav-link:hover {
+        color: #ffffff;
+    }
+
+.nav-pill {
+    border-radius: 999px;
+    padding: 0.55rem 0.9rem !important;
+}
+
+    .nav-pill:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+
+.nav-cta {
+    padding-inline: 1rem;
+    box-shadow: 0 10px 18px rgba(37, 99, 235, 0.22);
+}
+
+/* Hero strip */
+.hero-strip {
+    background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.16), transparent 30%), radial-gradient(circle at top right, rgba(16, 185, 129, 0.12), transparent 28%), linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.hero-strip-content {
+    padding: 2rem 0 1.8rem;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background-color: #e8f0ff;
+    color: #1d4ed8;
+    border: 1px solid #cfe0ff;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    margin-bottom: 0.9rem;
+}
+
+.hero-title {
+    margin-bottom: 0.4rem;
+    font-size: clamp(1.7rem, 2vw, 2.35rem);
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.hero-text {
+    color: #64748b;
+    max-width: 700px;
+}
+
+/* Main */
+.app-main {
+    width: 100%;
+}
+
+/* Tarjetas */
+.card {
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 1.15rem;
+    background-color: #ffffff;
+}
+
+    .card.shadow-sm {
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+        .card.shadow-sm:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0.75rem 1.5rem rgba(15, 23, 42, 0.08) !important;
+        }
+
+/* Encabezados */
+h1, h2, h3, h4, h5 {
+    color: #1f2937;
+    font-weight: 700;
+}
+
+/* Formularios */
+.form-label {
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-control,
+.form-select {
+    border-radius: 0.9rem;
+    min-height: 46px;
+    border: 1px solid #d7deea;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+    .form-control:hover,
+    .form-select:hover {
+        border-color: #bfd0ea;
+    }
+
+textarea.form-control {
+    min-height: auto;
+    padding-top: 0.85rem;
+}
+
+.form-control.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+/* Botones */
+.btn {
+    border-radius: 0.85rem;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    transition: all 0.18s ease;
+}
+
+    .btn:hover {
+        transform: translateY(-1px);
+    }
+
+.btn-sm {
+    border-radius: 0.75rem;
+}
+
+.btn-primary {
+    box-shadow: 0 10px 18px rgba(37, 99, 235, 0.18);
+}
+
+.btn-success {
+    box-shadow: 0 10px 18px rgba(22, 163, 74, 0.18);
+}
+
+.btn-warning {
+    box-shadow: 0 10px 18px rgba(245, 158, 11, 0.16);
+}
+
+.btn-danger {
+    box-shadow: 0 10px 18px rgba(220, 38, 38, 0.14);
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+    padding: 0.55em 0.8em;
+    border-radius: 999px;
+}
+
+/* Alertas */
+.alert {
+    border-radius: 1rem;
+    border: 1px solid transparent;
+}
+
+/* Tablas o listas visuales */
+.list-group-item {
+    border-left: 0;
+    border-right: 0;
+}
+
+/* Footer */
+.app-footer {
+    background: #ffffff;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    margin-top: auto;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    flex-wrap: wrap;
+}
+
+.footer-title {
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.15rem;
+}
+
+.footer-text {
+    color: #6b7280;
+    font-size: 0.92rem;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+    .footer-links a {
+        text-decoration: none;
+        color: #64748b;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+        .footer-links a:hover {
+            color: #2563eb;
+        }
+
+/* Utilidad para textos largos en cards */
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Utilidades para páginas internas */
+.section-heading {
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.section-subheading {
+    color: #6b7280;
+}
+
+.subhead {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .hero-strip-content {
+        padding: 1.5rem 0 1.35rem;
+    }
+
+    .nav-cta {
+        margin-top: 0.35rem;
+        width: 100%;
+    }
+
+    .navbar .navbar-collapse {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 1rem;
+        padding: 0.85rem;
+        margin-top: 0.8rem;
+    }
+}
