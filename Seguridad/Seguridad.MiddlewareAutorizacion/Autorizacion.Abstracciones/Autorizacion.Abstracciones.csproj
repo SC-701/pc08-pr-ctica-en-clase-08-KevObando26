@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Version>1.0.0</Version>
-    <PackageId>Autorizacion.Abstracciones.KevObando26</PackageId>
+    <PackageId>Autorizacion.Abstracciones.KevObando26.new</PackageId>
     <Authors>KevObando26</Authors>
     <Description>Interfaces y modelos compartidos del paquete de autorización por claims para ASP.NET Core 8</Description>
     <RepositoryUrl>https://github.com/SC701</RepositoryUrl>

@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Version>1.0.0</Version>
-    <PackageId>Autorizacion.DA.KevObando26</PackageId>
+    <PackageId>Autorizacion.DA.KevObando26.new</PackageId>
     <Authors>KevObando26</Authors>
     <Description>Capa de acceso a datos del paquete de autorización. Consulta perfiles de usuario en la BD de seguridad con Dapper</Description>
     <RepositoryUrl>https://github.com/SC701</RepositoryUrl>
