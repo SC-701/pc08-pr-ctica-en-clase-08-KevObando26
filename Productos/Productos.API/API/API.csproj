@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autorizacion.Abstracciones.KevObando26.new" Version="1.0.0" />
+    <PackageReference Include="Autorizacion.DA.KevObando26.new" Version="1.0.0" />
+    <PackageReference Include="Autorizacion.Flujo.KevObando26.new" Version="1.0.0" />
+    <PackageReference Include="Autorizacion.Middleware.KevObando26.new" Version="1.0.0" />
+	<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.24" />
     <PackageReference Include="Dapper" Version="2.1.66" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>

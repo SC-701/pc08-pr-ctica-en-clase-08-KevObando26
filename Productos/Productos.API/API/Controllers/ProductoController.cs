@@ -3,11 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using Abstracciones.Interfaces.API;
 using Abstracciones.Modelos;
 using Abstracciones.Interfaces.Flujo;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductoController : ControllerBase, IProductoController
     {
         private IProductoFlujo _productoFlujo;
@@ -18,28 +20,28 @@ namespace API.Controllers
             _productoFlujo = productoFlujo;
             _logger = logger;
         }
-
+        [Authorize(Roles = "2")]
         [HttpPost]
         public async Task<IActionResult> Agregar(ProductoRequest producto)
         {
             var resultado = await _productoFlujo.Agregar(producto);
             return CreatedAtAction(nameof(Obtener), new { Id = resultado }, resultado);
         }
-
+        [Authorize(Roles = "2")]
         [HttpPut("{Id}")]
         public async Task<IActionResult> Editar(Guid Id, ProductoRequest producto)
         {
             var resultado = await _productoFlujo.Editar(Id, producto);
             return Ok(resultado);
         }
-
+        [Authorize(Roles = "2")]
         [HttpDelete("{Id}")]
         public async Task<IActionResult> Eliminar(Guid Id)
         {
             var resultado = await _productoFlujo.Eliminar(Id);
             return NoContent();
         }
-
+        [Authorize(Roles = "1")]
         [HttpGet("ObtenerTodos")]
         public async Task<IActionResult> Obtener()
         {
@@ -49,7 +51,7 @@ namespace API.Controllers
                 return NoContent();
             return Ok(resultado);
         }
-
+        [Authorize(Roles = "1")]
         [HttpGet("ObtenerPorId/{Id}")]
         public async Task<IActionResult> Obtener(Guid Id)
         {
