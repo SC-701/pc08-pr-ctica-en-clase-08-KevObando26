@@ -1,0 +1,82 @@
+﻿@page
+@model Web.Pages.Seguridad.LoginModel
+@{
+    ViewData["Title"] = "Iniciar sesión";
+}
+
+<section class="auth-wrapper">
+    <div class="row justify-content-center">
+        <div class="col-xl-5 col-lg-6 col-md-8">
+            <div class="card shadow-sm border-0 auth-card">
+                <div class="card-body p-4 p-md-5">
+                    <div class="text-center mb-4">
+                        <span class="hero-badge mb-3">
+                            <i class="bi bi-shield-lock"></i> Acceso seguro
+                        </span>
+                        <h2 class="section-heading text-uppercase mb-2">Iniciar sesión</h2>
+                        <p class="section-subheading mb-0">
+                            Ingresa tus credenciales para acceder al sistema de gestión de productos.
+                        </p>
+                    </div>
+
+                    <form method="post">
+                        <div class="mb-3">
+                            <label asp-for="loginInfo.CorreoElectronico" class="form-label">Correo electrónico</label>
+                            <div class="input-group auth-input-group">
+                                <span class="input-group-text">
+                                    <i class="bi bi-envelope-at"></i>
+                                </span>
+                                <input type="email"
+                                       asp-for="loginInfo.CorreoElectronico"
+                                       class="form-control form-control-lg"
+                                       placeholder="nombre@correo.com" />
+                            </div>
+                            <span asp-validation-for="loginInfo.CorreoElectronico" class="text-danger small d-block mt-2"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="loginInfo.Password" class="form-label">Contraseña</label>
+                            <div class="input-group auth-input-group">
+                                <span class="input-group-text">
+                                    <i class="bi bi-key"></i>
+                                </span>
+                                <input type="password"
+                                       asp-for="loginInfo.Password"
+                                       class="form-control form-control-lg"
+                                       placeholder="Ingresa tu contraseña" />
+                            </div>
+                            <span asp-validation-for="loginInfo.Password" class="text-danger small d-block mt-2"></span>
+                        </div>
+
+                        @if (Model.token is not null && Model.token.ValidacionExitosa == false)
+                        {
+                            <div class="alert alert-warning d-flex align-items-center gap-2" role="alert">
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                <span>Credenciales incorrectas.</span>
+                            </div>
+                        }
+
+                        <div class="d-grid mt-4">
+                            <button class="btn btn-primary btn-lg" type="submit">
+                                <i class="bi bi-box-arrow-in-right me-2"></i>Iniciar sesión
+                            </button>
+                        </div>
+
+                        <input type="hidden" asp-for="loginInfo.CorreoElectronico" />
+                    </form>
+
+                    <hr class="my-4" />
+
+                    <div class="auth-links text-center">
+                        <a asp-page="/Seguridad/Registro" class="auth-link">
+                            <i class="bi bi-person-plus me-1"></i>Registrarse
+                        </a>
+                        <a href="#!" class="auth-link">
+                            <i class="bi bi-question-circle me-1"></i>Olvidó su contraseña
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

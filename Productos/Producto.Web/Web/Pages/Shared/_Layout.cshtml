@@ -46,11 +46,10 @@
                                 <i class="bi bi-shield-lock me-1"></i> Privacidad
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="btn btn-primary btn-sm nav-cta ms-lg-2" asp-page="/Productos/Agregar">
-                                <i class="bi bi-plus-circle me-1"></i> Nuevo producto
-                            </a>
-                        </li>
+                        
+                        <div class="align-content-end navbar-nav text-uppercase">
+                            @await Html.PartialAsync("_AutenticacionParcial")
+                        </div>
                     </ul>
                 </div>
             </div>

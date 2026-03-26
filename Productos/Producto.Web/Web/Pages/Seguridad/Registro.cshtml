@@ -1,0 +1,104 @@
+﻿@page
+@model Web.Pages.Seguridad.RegistroModel
+@{
+    ViewData["Title"] = "Registrarse";
+}
+
+<section class="auth-wrapper">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-7 col-md-9">
+            <div class="card shadow-sm border-0 auth-card">
+                <div class="card-body p-4 p-md-5">
+                    <div class="text-center mb-4">
+                        <span class="hero-badge mb-3">
+                            <i class="bi bi-person-plus-fill"></i> Nuevo usuario
+                        </span>
+                        <h2 class="section-heading text-uppercase mb-2">Registrarse</h2>
+                        <p class="section-subheading mb-0">
+                            Crea tu cuenta para acceder al sistema de gestión de productos.
+                        </p>
+                    </div>
+
+                    <form method="post">
+                        <div class="mb-3">
+                            <label asp-for="usuario.NombreUsuario" class="form-label">Nombre de usuario</label>
+                            <div class="input-group auth-input-group">
+                                <span class="input-group-text">
+                                    <i class="bi bi-person-fill"></i>
+                                </span>
+                                <input type="text"
+                                       asp-for="usuario.NombreUsuario"
+                                       class="form-control form-control-lg"
+                                       placeholder="Ingresa tu nombre de usuario" />
+                            </div>
+                            <span asp-validation-for="usuario.NombreUsuario" class="text-danger small d-block mt-2"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="usuario.CorreoElectronico" class="form-label">Correo electrónico</label>
+                            <div class="input-group auth-input-group">
+                                <span class="input-group-text">
+                                    <i class="bi bi-envelope-at-fill"></i>
+                                </span>
+                                <input type="email"
+                                       asp-for="usuario.CorreoElectronico"
+                                       class="form-control form-control-lg"
+                                       placeholder="nombre@correo.com" />
+                            </div>
+                            <span asp-validation-for="usuario.CorreoElectronico" class="text-danger small d-block mt-2"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="usuario.Password" class="form-label">Contraseña</label>
+                            <div class="input-group auth-input-group">
+                                <span class="input-group-text">
+                                    <i class="bi bi-key-fill"></i>
+                                </span>
+                                <input type="password"
+                                       asp-for="usuario.Password"
+                                       class="form-control form-control-lg"
+                                       placeholder="Ingresa tu contraseña" />
+                            </div>
+                            <span asp-validation-for="usuario.Password" class="text-danger small d-block mt-2"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="usuario.ConfirmarPassword" class="form-label">Confirmar contraseña</label>
+                            <div class="input-group auth-input-group">
+                                <span class="input-group-text">
+                                    <i class="bi bi-key-fill"></i>
+                                </span>
+                                <input type="password"
+                                       asp-for="usuario.ConfirmarPassword"
+                                       class="form-control form-control-lg"
+                                       placeholder="Confirma tu contraseña" />
+                            </div>
+                            <span asp-validation-for="usuario.ConfirmarPassword" class="text-danger small d-block mt-2"></span>
+                        </div>
+
+                        <div class="form-check mb-4 auth-check">
+                            <input class="form-check-input" type="checkbox" value="" id="aceptar" />
+                            <label class="form-check-label" for="aceptar">
+                                He leído y acepto <a href="#!" class="auth-link">los términos y condiciones de uso</a>
+                            </label>
+                        </div>
+
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-person-check-fill me-2"></i>Registrarse
+                            </button>
+                        </div>
+                    </form>
+
+                    <hr class="my-4" />
+
+                    <div class="auth-links text-center">
+                        <a asp-page="/Seguridad/Login" class="auth-link">
+                            <i class="bi bi-box-arrow-in-right me-1"></i>Ya tengo una cuenta
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
